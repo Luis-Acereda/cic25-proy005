@@ -10,4 +10,8 @@ class Proy005ApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	void testLista(){		
+	}
+
 }

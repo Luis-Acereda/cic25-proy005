@@ -1,6 +1,10 @@
 package es.cic.curso25.proy005;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,8 +12,42 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/telefono")
 public class TelefonoController {
 
+    private int contador = 0;
+
+    // C R U D
+
     @GetMapping
-    public String DecirHola(){
-        return "Hola mundo";
+    public List<Telefono> get(){
+        contador++;
+        List<Telefono> telefonos = new ArrayList<>();
+
+        Telefono telefono1 = new Telefono();
+        telefono1.setId(1);
+        telefono1.setNumero("555555555");
+        telefono1.setTipoContrato(3);
+        telefono1.setTitular("Juan");
+
+        telefonos.add(telefono1);
+
+        Telefono telefono2 = new Telefono();
+        telefono2.setId(2);
+        telefono2.setNumero("555555556");
+        telefono2.setTipoContrato(4);
+        telefono2.setTitular("Antonio");
+
+        telefonos.add(telefono2);
+
+        return telefonos;
+    }
+
+    @GetMapping("/{id}")
+    public Telefono get(@PathVariable long id){
+        Telefono telefono1 = new Telefono();
+        telefono1.setId(id);
+        telefono1.setNumero("555555555");
+        telefono1.setTipoContrato(3);
+        telefono1.setTitular("Juan");
+
+        return telefono1;
     }
 }
