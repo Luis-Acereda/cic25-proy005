@@ -1,4 +1,4 @@
-package es.cic.curso25.proy005;
+package es.cic.curso25.proy005.controller;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

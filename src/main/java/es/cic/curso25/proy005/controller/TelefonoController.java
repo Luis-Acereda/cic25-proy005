@@ -1,4 +1,4 @@
-package es.cic.curso25.proy005;
+package es.cic.curso25.proy005.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,14 +13,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import es.cic.curso25.proy005.model.Telefono;
+import es.cic.curso25.proy005.service.TelefonoService;
+
 @RestController
 @RequestMapping("/telefono")
 public class TelefonoController {
 
     @Autowired
     private TelefonoService telefonoService;
-
-    private int contador = 0;
 
     // C R U D
 
@@ -70,6 +71,6 @@ public class TelefonoController {
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable long id){
-        contador = contador;
+        
     }
 }
