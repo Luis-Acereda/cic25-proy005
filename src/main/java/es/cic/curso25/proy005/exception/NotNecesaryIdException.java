@@ -7,4 +7,8 @@ public class NotNecesaryIdException extends RuntimeException {
     public NotNecesaryIdException(String message){
         super(message);
     }
+
+    public NotNecesaryIdException(String message, Throwable throwable){
+        super(message, throwable);
+    }
 }
